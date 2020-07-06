@@ -13,7 +13,7 @@
 
 # 0, 1 - Base - if we solve recursively move towards it
 
-#0, 1, 1, 2, 3, 5, 8 , 13, 21, 34, 55, 89
+# 0, 1, 1, 2, 3, 5, 8 , 13, 21, 34, 55, 89
 
 # def recursive_fib(n):
 #     # base case
@@ -71,11 +71,25 @@
 [1][2][][3][][5][6][7][8][][9][]
 
 # plan
-# base case: if array length 0 or 1
-# return array
-# else:
-# pick pivot might as well pick first because its unsorted, none are better
-# put anything smaller into left array
-# put anything bigger into right array
-# quicksort(left)
-# quicksort(right)
+
+
+def quisort(data):
+    # base case: if array length 0 or 1
+    if len(data) < 2:
+        # return array
+        return data
+    # else:
+    else:
+        # pick pivot might as well pick first because its unsorted, none are better
+    pivot = data[0]
+    left = []
+    right = []
+    # put anything smaller into left array
+    # put anything bigger into right array
+      for value in data[1:]:
+           if value <= pivot:
+                left.append(value)
+            else:
+                right.append(value)
+    # return quicksort(left) + pivot + quicksort(right)
+        return quicksort(left) + [pivot] + quicksort(right)
